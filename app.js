@@ -5,6 +5,7 @@ const Package = require('./models/package');
 const Log = require('./models/log');
 const bodyParser = require('body-parser');
 
+
 // express app
 const app = express();
 
@@ -23,14 +24,19 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/login',async (req,res)=>{
+  Log.find()
+  .then((result)=>{
+    res.render('login',{logs: result})
+  })
+})
+
 app.get('/post', async (req,res)=>{
-    const package = new Package({
-        packageId:  '000000002',
-        location: 'A04',
-        numberOfPieces: 20,
-        features: 'kirbant',
+    const log = new Log({
+      logId: 'admin',
+      password:'admin'
     });
-    package.save()
+    log.save()
     .then(()=>{
         res.redirect('/');
     })
