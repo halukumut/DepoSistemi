@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head.ejs') %>
+    </head>
+    <style>
+        *{
+            font:bold;
+            font-family: sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-row input {
+            margin: 0 20px;
+            width: 120px; /* Adjust the width as needed */
+            padding: 10px; /* Add padding to adjust input height */
+            font-size:large;
+        }
+        label{
+            font-size: x-large;
+            padding: 0 55px;
+            margin: 5px;
+        }
+        #hyphen{
+            padding:0 0px;
+        }
+        #saveButton{
+            margin-top:20px;
+            padding:10px;
+        }
+        #searchButton{
+            margin: 10px;
+            padding:10px;
+        }
+        button{
+            font-size: large;
+        }
+    </style>
+
+<body>
+    <div class="form-container">
+        <div class="form-row">
+            <label>ID</label>
+        </div>
+        <div class="form-row">
+            <input type="text"><br><br><br>
+        </div>
+        <button id="searchButton">SEARCH</button>
+        <div class="form-row">
+            <label>location</label>
+            <label>pieces</label>
+            <label>features</label>
+        </div>
+        <div class="form-row">
+            <form>
+
+                <input type="text" id="location" name="location"  required>
+                    <label id="hyphen">-</label>
+                    <input type="text" id="pieces" >
+                    <label id="hyphen">-</label>
+                    <input type="text" id="features" >
+            </form>
+        </div>
+        <div>
+            <button id="saveButton" >SAVE</button>
+        </div>
+    </div>
+</body>
+</html>

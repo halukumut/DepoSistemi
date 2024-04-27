@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head.ejs') %>
+    </head>
+    <style>
+
+        *{
+            font:bold;
+            font-family: sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        input{
+            font-size: large;
+            width: 100px;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-row-minor{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            font-size: large;
+            padding: 5px;
+        }
+        .form-row-minor h2 {
+            width: 80px; /* Adjust the width as needed */
+            padding: 10px 30px; /* Add padding to adjust input height */
+            font-size:medium;
+            text-align: center;
+            margin: 5px;
+            font: 100px;
+        }
+        h1{
+            width: 80px;
+            font-size: large;
+            padding: 30px;
+            margin: 5px;
+            text-align: center;
+        }
+        #saveButton{
+            margin:20px;
+            padding:10px;
+        }
+        #searchButton{
+            margin: 10px;
+            padding:10px;
+        }
+        button{
+            font-size: large;
+        }
+    </style>
+<body>
+    <div class="form-container">
+        <div class="form-row">
+            <h1>RAF</h1>
+        </div>
+        <div class="form-row">
+            <input type="text"><br><br><br>
+        </div>
+        <button id="searchButton">SEARCH</button>
+        <div class="form-row">
+            <h1>ID</h1>
+            <h1>pieces</h1>
+            <h1>features</h1>
+        </div>
+            <section id="raf-list">
+                <%pakets.forEach((paket)=>{%>
+                    <div class="form-row-minor">
+                        <a href="/paketsorgu/<%= paket.packageId %>"><h2 ><%=paket.packageId%></h2></a>
+                        <h2><%=paket.numberOfPieces%></h2>
+                        <h2><%=paket.features%></h2>
+                    </div>
+                <%})%>
+            </section>
+        <div>
+            <button id="saveButton" >SAVE</button>
+        </div>
+    </div>
+</body>
+</html>
