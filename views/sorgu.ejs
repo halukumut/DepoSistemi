@@ -62,24 +62,27 @@
             <input type="text"><br><br><br>
         </div>
         <button id="searchButton">SEARCH</button>
-        <div class="form-row">
-            <label>location</label>
-            <label>pieces</label>
-            <label>features</label>
-        </div>
-        <div class="form-row">
-            <form>
-
-                <input type="text" id="location" name="location"  required>
-                    <label id="hyphen">-</label>
-                    <input type="text" id="pieces" >
-                    <label id="hyphen">-</label>
-                    <input type="text" id="features" >
-            </form>
-        </div>
-        <div>
-            <button id="saveButton" >SAVE</button>
-        </div>
+        <%if(paket){%> 
+            <div class="form-row">
+                <label>location</label>
+                <label>pieces</label>
+                <label>features</label>
+            </div>
+            <div class="form-row">
+                <form>
+                    <%paket.forEach((package)=>{%>
+                        <input type="text" id="location" name="location" value="<%= package.location %>" required>
+                        <label id="hyphen">-</label>
+                        <input type="text" id="pieces" value="<%= package.numberOfPieces%>">
+                        <label id="hyphen">-</label>
+                        g<input type="text" id="features" value="<%= package.features%>">
+                    <%})%>
+                </form>
+            </div>
+            <div>
+               <button id="saveButton" >SAVE</button>
+            </div>
+        <%}%>
     </div>
 </body>
 </html>
