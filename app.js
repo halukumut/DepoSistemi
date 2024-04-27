@@ -46,7 +46,7 @@ app.get('/delete/:id',async(req,res)=>{
 })
 
 app.get('/paketsorgu', async (req,res)=>{
-    res.render('sorgu');
+    res.render('sorgu',{paket: null});
 })
 
 app.get('/paketsorgu/:packageId', async (req,res)=>{
