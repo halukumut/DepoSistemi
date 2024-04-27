@@ -4,28 +4,30 @@
         <%- include('./partials/head.ejs') %>
     </head>
 <body>
-    <div class="form-container">
-        <div class="form-row">
-            <label>AGIRLIK</label>
+    <form>
+        <div class="form-container">
+            <div class="form-row">
+                <label>AGIRLIK</label>
+            </div>
+            <div class="form-row">
+                <input type="text" required><br><br><br>
+            </div>
+            <div class="form-row">
+                <label>location</label>
+                <label>pieces</label>
+                <label>features</label>
+            </div>
+            <div class="form-row">
+                <input type="text" >
+                <label id="hyphen">-</label>
+                <input type="text" >
+                <label id="hyphen">-</label>
+                <input type="text" >
+            </div>
+            <div>
+                <button method="POST" id="saveButton">SUBMIT</button>
+            </div>
         </div>
-        <div class="form-row">
-            <input type="text" required><br><br><br>
-        </div>
-        <div class="form-row">
-            <label>location</label>
-            <label>pieces</label>
-            <label>features</label>
-        </div>
-        <div class="form-row">
-            <input type="text" >
-            <label id="hyphen">-</label>
-            <input type="text" >
-            <label id="hyphen">-</label>
-            <input type="text" >
-        </div>
-        <div>
-            <button id="saveButton" >SAVE</button>
-        </div>
-    </div>
+    </form>
 </body>
 </html>

@@ -87,6 +87,7 @@ h1{
     text-align: center;
 }
 #saveButton{
+    align-items: center;
     margin:20px;
     padding:10px;
 }
