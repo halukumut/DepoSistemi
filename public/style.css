@@ -1,0 +1,107 @@
+*{
+    font:bold;
+    font-family: sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+}
+.container {
+    width: 150px; /* Adjust this width as per your preference */
+    height: 150px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+h2{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+header{
+    text-align: center;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+input{
+    font-size: large;
+    width: 100px;
+}
+.form-row input {
+    margin: 0 20px;
+    width: 120px; /* Adjust the width as needed */
+    padding: 10px; /* Add padding to adjust input height */
+    font-size:large;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-row-minor{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    font-size: large;
+    padding: 5px;
+}
+.form-row-minor h2 {
+    width: 80px; /* Adjust the width as needed */
+    padding: 10px 30px; /* Add padding to adjust input height */
+    font-size:medium;
+    text-align: center;
+    margin: 5px;
+    font: 100px;
+}
+h1{
+    width: 80px;
+    font-size: large;
+    padding: 30px;
+    margin: 5px;
+    text-align: center;
+}
+#saveButton{
+    margin:20px;
+    padding:10px;
+}
+#searchButton{
+    margin: 10px;
+    padding:10px;
+}
+button{
+    font-size: large;
+}
+label{
+    font-size: x-large;
+    padding: 0 55px;
+    margin: 5px;
+}
+#hyphen{
+    padding:0 0px;
+}
