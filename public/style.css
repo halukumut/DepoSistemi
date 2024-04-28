@@ -90,10 +90,18 @@ h1{
     align-items: center;
     margin:20px;
     padding:10px;
+    content:20px;
 }
 #searchButton{
     margin: 10px;
     padding:10px;
+}
+#deleteButton{
+    margin:20px;
+    padding: 10px;
+    content:20px;
+    color:black;
+    background-color: red;
 }
 button{
     font-size: large;

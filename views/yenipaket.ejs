@@ -4,13 +4,13 @@
         <%- include('./partials/head.ejs') %>
     </head>
 <body>
-    <form>
+    <form action="/package/post" method="POST">
         <div class="form-container">
             <div class="form-row">
                 <label>AGIRLIK</label>
             </div>
             <div class="form-row">
-                <input type="text" required><br><br><br>
+                <input type="text" name="weight" required><br><br><br>
             </div>
             <div class="form-row">
                 <label>location</label>
@@ -18,11 +18,11 @@
                 <label>features</label>
             </div>
             <div class="form-row">
-                <input type="text" >
+                <input type="text" name="location" >
                 <label id="hyphen">-</label>
-                <input type="text" >
+                <input type="text" name="numberOfPieces">
                 <label id="hyphen">-</label>
-                <input type="text" >
+                <input type="text" name="features">
             </div>
             <div>
                 <button method="POST" id="saveButton">SUBMIT</button>

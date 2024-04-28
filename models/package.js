@@ -3,7 +3,7 @@ const Schema=mongoose.Schema;
 
 const packageSchema=new Schema({
     packageId:{
-        type: String,
+        type: Number,
         required:true,
     },
     location:{
@@ -16,6 +16,10 @@ const packageSchema=new Schema({
     },
     features:{
         type: String,
+        required:false,
+    },
+    weight:{
+        type: Number,
         required:false,
     }
 },{timestamps:true});

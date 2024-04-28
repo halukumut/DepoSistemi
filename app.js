@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const Package = require('./models/package');
 const Log = require('./models/log');
 const bodyParser = require('body-parser');
+const { result } = require('lodash');
 
 
 // express app
@@ -32,19 +33,39 @@ app.get('/login',async (req,res)=>{
 })
 
 app.get('/post', async (req,res)=>{
-    const log = new Log({
-      logId: 'admin',
-      password:'admin'
+    const package = new Package({
+      packageId:9,
+      location:'A01',
+      numberOfPieces:1,
+      features:'mb'
     });
-    log.save()
+    package.save()
     .then(()=>{
         res.redirect('/');
     })
 
 })
 
+app.post('/package/post', async (req,res)=>{
+  var newPackageId;
+  const updatedPackageData = req.body;
+  console.log(updatedPackageData);
+  Package.findOne().sort({packageId: -1})
+  .then((result)=>{
+  const package = new Package({
+    packageId: result.packageId + 1,
+    location: updatedPackageData.location,
+    numberOfPieces: updatedPackageData.numberOfPieces,
+    features: updatedPackageData.features,
+    weight: updatedPackageData.weight
+  })
+  package.save();
+  res.redirect('/yenipaket');
+  })
+})
+
 app.get('/delete/:id',async(req,res)=>{
-  Package.findByIdAndDelete(req.params.id)
+  Package.findOneAndDelete({packageId: req.params.id})
   .then(()=>{
     res.redirect('/menu')
   })
