@@ -5,37 +5,40 @@
     </head>
 <body>
     <div class="form-container">
-        <%paket.forEach((package)=>{%>
         <div class="form-row">
             <label>ID</label>
         </div>
-        <div class="form-row">
-            <input type="text" name="packageId" value="<%=package.packageId%>"><br><br><br>
-        </div>
-        <button id="searchButton">SEARCH</button>
-        <%if(paket){%> 
         <form>
             <div class="form-row">
-                <label>location</label>
-                <label>pieces</label>
-                <label>features</label>
-            </div>
-            <div class="form-row">
-                
-                    <input type="text" id="location" name="location" value="<%= package.location %>" required>
-                    <label id="hyphen">-</label>
-                    <input type="text" id="pieces" value="<%= package.numberOfPieces%>">
-                    <label id="hyphen">-</label>
-                    <input type="text" id="features" value="<%= package.features%>">
-                
-            </div>
-            <div class="form-row">
-                <button id="saveButton">SAVE</button>
+                <input type="text" name="packageId"><br><br><br>
             </div>
         </form>
-        <button id="deleteButton" onclick="deleteButton()">DELETE</button>
-        <%}%>
-        <%})%> 
+        <button id="searchButton">SEARCH</button>
+        <%if(paket){%> 
+            <%paket.forEach((package)=>{%>
+            <form>
+                <div class="form-row">
+                    <label>Package ID: <%= package.packageId%></label>
+                </div>
+                <div class="form-row">
+                    <label>location</label>
+                    <label>pieces</label>
+                    <label>features</label>
+                </div>
+                <div class="form-row">
+                        <input type="text" id="location" name="location" value="<%= package.location %>" required>
+                        <label id="hyphen">-</label>
+                        <input type="text" id="pieces" value="<%= package.numberOfPieces%>">
+                        <label id="hyphen">-</label>
+                        <input type="text" id="features" value="<%= package.features%>">     
+                </div>
+                <div class="form-row">
+                    <button id="saveButton">SAVE</button>
+                </div>
+            </form>
+            <button id="deleteButton" onclick="deleteButton()">DELETE</button>
+            <%})%>
+        <%}%> 
     </div>
     <script>
         function deleteButton(){
