@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include('./partials/head.ejs') %>
-    </head>
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
 <body>
-    <div class="form-container">
+    <div class="search-container">
         <div class="form-row">
             <h1>RAF</h1>
         </div>
         <div class="form-row">
-            <input type="text"><br><br><br>
+            <input type="text" id="searchInput" placeholder="Enter search query...">
+            <button id="searchButton">SEARCH</button>
         </div>
-        <button id="searchButton">SEARCH</button>
-        <div class="form-row">
-            <h1>ID</h1>
-            <h1>pieces</h1>
-            <h1>features</h1>
-        </div>
-            <section id="raf-list">
-                <%pakets.forEach((paket)=>{%>
-                    <div class="form-row-minor">
-                        <a href="/paketsorgu/<%= paket.packageId %>"><h2 ><%=paket.packageId%></h2></a>
-                        <h2><%=paket.numberOfPieces%></h2>
-                        <h2><%=paket.features%></h2>
-                    </div>
-                <%})%>
-            </section>
     </div>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Package ID</th>
+                <th>Number of Pieces</th>
+                <th>Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% pakets.forEach((paket) => { %>
+                <tr>
+                    <td><a href="/paketsorgu/<%= paket.packageId %>"><%= paket.packageId %></a></td>
+                    <td><%= paket.numberOfPieces %></td>
+                    <td><%= paket.features %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
 </body>
 </html>
