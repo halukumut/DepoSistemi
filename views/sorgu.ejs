@@ -10,10 +10,10 @@
         </div>
         <form>
             <div class="form-row">
-                <input type="text" name="packageId"><br><br><br>
+                <input type="text" id="packageId" name="packageId"><br><br><br>
             </div>
         </form>
-        <button id="searchButton">SEARCH</button>
+        <button id="searchButton" onclick="searchButton()">SEARCH</button>
         <%if(paket){%> 
             <%paket.forEach((package)=>{%>
             <form>
@@ -45,6 +45,18 @@
         const urlParts = window.location.href.split('/');
         const id = urlParts[urlParts.length-1];
         window.location.href='http://localhost:3000/delete/'+id;
+        }
+        function searchButton(){
+            var searchBar = document.getElementById("packageId");
+            const urlParts = window.location.href.split('/');
+            var newUrl = "";
+            var i=0;
+            while(urlParts[i-1] != "paketsorgu" ){
+                newUrl+=urlParts[i] + '/';
+                i++;
+            }
+            newUrl += String(searchBar.value);
+            window.location.href = newUrl;
         }
     </script>
 </body>

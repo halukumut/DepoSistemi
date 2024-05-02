@@ -78,7 +78,12 @@ app.get('/paketsorgu', async (req,res)=>{
 app.get('/paketsorgu/:packageId', async (req,res)=>{
   const package = Package.find({packageId: req.params.packageId})
   .then((result)=>{
-    res.render('sorgu',{paket: result})
+    console.log(result)
+    if(result != ''){
+      res.render('sorgu',{paket: result});
+    }else{
+      res.redirect('/paketsorgu');
+    }   
   })
 })
 
@@ -104,7 +109,9 @@ app.get('/rafsorgu', async (req,res)=>{
 app.get('/rafsorgu/:rafId', async (req,res)=>{
   Package.find({location: req.params.rafId})
   .then((result)=>{
-    res.render('rafsorgu',{pakets: result}); 
+    
+      res.render('rafsorgu',{pakets: result}); 
+    
   })
 })
 

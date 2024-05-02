@@ -10,7 +10,7 @@
         </div>
         <div class="form-row">
             <input type="text" id="searchInput" placeholder="Enter search query...">
-            <button id="searchButton">SEARCH</button>
+            <button id="searchButton" onclick="searchButton()" >SEARCH</button>
         </div>
     </div>
     <br>
@@ -24,14 +24,30 @@
             </tr>
         </thead>
         <tbody>
+            <%if(pakets){%>
             <% pakets.forEach((paket) => { %>
                 <tr>
                     <td><a href="/paketsorgu/<%= paket.packageId %>"><%= paket.packageId %></a></td>
                     <td><%= paket.numberOfPieces %></td>
                     <td><%= paket.features %></td>
                 </tr>
-            <% }) %>
+            <%})%>
+            <%}%>
         </tbody>
     </table>
+    <script>
+        function searchButton(){
+            var searchBar = document.getElementById("searchInput");
+            const urlParts = window.location.href.split('/');
+            var newUrl = "";
+            var i=0;
+            while(urlParts[i-1] != "rafsorgu" ){
+                newUrl+=urlParts[i] + '/';
+                i++;
+            }
+            newUrl += String(searchBar.value);
+            window.location.href = newUrl;
+        }
+    </script>
 </body>
 </html>
