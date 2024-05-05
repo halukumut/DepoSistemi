@@ -29,7 +29,7 @@ header{
     left:0;
     right:0;
     color: white;
-    background-color:#bbbbbb;
+    background-color:#007bff;
 }
 
 h2{
@@ -98,32 +98,47 @@ h1{
     padding: 5px;
 }
 .form-row-minor h2 {
-    width: 80px; /* Adjust the width as needed */
-    padding: 10px 30px; /* Add padding to adjust input height */
+    width: 80px; 
+    padding: 10px 30px; 
     font-size:medium;
     text-align: center;
     margin: 5px;
     font: 100px;
 }
-#saveButton{
-    align-items: center;
-    margin:20px;
-    padding:10px;
-    content:20px;
+.form-group{
+    width: 370px;
+    font-size:medium;
+    margin: 5px;
+    font: 100px;   
 }
+
 #searchButton{
     margin: 10px;
     padding:10px;
 }
 #deleteButton{
-    margin:20px;
-    padding: 10px;
-    content:20px;
-    color:black;
-    background-color: red;
+    font-size: large;
+    padding: 8px 20px;
+    background-color: #e20606;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#deleteButton:hover{
+    background-color: #c00707;
 }
 button{
     font-size: large;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
 }
 label{
     font-size: x-large;
@@ -150,17 +165,7 @@ label{
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-.search-container button {
-    padding: 8px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.search-container button:hover {
-    background-color: #0056b3;
-}
+
 
 
 table {
@@ -177,4 +182,35 @@ table th {
 }
 table tr:hover {
     background-color: #f5f5f5;
+}
+
+
+
+.card-header {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#Login{
+    width: 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
