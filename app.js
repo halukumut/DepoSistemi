@@ -109,9 +109,7 @@ app.get('/rafsorgu', async (req,res)=>{
 app.get('/rafsorgu/:rafId', async (req,res)=>{
   Package.find({location: req.params.rafId})
   .then((result)=>{
-    
       res.render('rafsorgu',{pakets: result}); 
-    
   })
 })
 
