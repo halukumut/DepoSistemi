@@ -26,9 +26,13 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/login',async (req,res)=>{
+  res.render('login');
+})
+
+app.get('/login/logs', async (req, res)=>{
   Log.find()
   .then((result)=>{
-    res.render('login',{logs: result})
+    res.send(result);
   })
 })
 
@@ -114,5 +118,5 @@ app.get('/rafsorgu/:rafId', async (req,res)=>{
 })
 
 app.get('/',async(req,res)=>{
-  res.redirect('/menu');
+  res.redirect('/login');
 })

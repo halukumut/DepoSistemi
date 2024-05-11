@@ -4,6 +4,18 @@
     <link rel="stylesheet" href="http://localhost:3000/style.css">
     <title>DEPO</title>
     <header>
-        <a href="/menu"><h3>DEPO</h3></a>
+            <h3 onclick="redirect()">DEPO</h3>
     </header>
+    <script>
+        function redirect(){
+            url = window.location.href.split('/');
+            url_end = url[url.length-1];
+            if(url_end != "login"){
+                window.location.href = 'http://localhost:3000/menu';
+            }else{
+                window.location.href = 'http://localhost:3000/login';
+            }
+            
+        }
+    </script>
   </head>

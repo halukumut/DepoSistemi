@@ -8,7 +8,7 @@
             <div class="card-header bg-primary text-white">
                 <h4>Login</h4>
             </div>
-            <form action="  " method="POST">
+            <form action="  ">
                 <div class="form-group">
                      <label for="username">Username</label>
                      <input type="text" name="username" id="username" class="form-control" required>
@@ -17,8 +17,50 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" class="form-control" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button type="submit" class="btn btn-primary btn-block" onclick="Login()">Login</button>
             </form>
         </div>
+        <script>
+            var id;
+            var password;
+            async function fetchDetails(){
+                try {
+                const response = await fetch(`http://localhost:3000/login/logs`);
+                const dataArray = await response.json();
+                console.log(dataArray);
+
+                // Check if the array has at least one element
+                if (dataArray.length > 0) {
+                    const data = dataArray[0]; // Access the first element of the array
+                    id = data.logId;
+                    pass = data.password;
+                    
+                    console.log('id=', id);
+                    console.log('pass=', pass);
+                } else {
+                    console.log('No data found in the array');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+
+
+            }
+            function Login(){
+                event.preventDefault();
+                var username = document.getElementById("username");
+                var password = document.getElementById("password");
+                if(username.value == id && password.value == pass){
+                    alert('Giriş Başarılı');
+                    window.location.replace(window.location.protocol + "//" + window.location.host +'/menu');
+                }
+                else{
+                    
+                }
+            }
+            window.onload = () => {
+                    fetchDetails();
+                }
+        </script>        
     </body>
 </html>
